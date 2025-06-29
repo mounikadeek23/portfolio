@@ -117,7 +117,7 @@ body {
 }
 @keyframes words{
     0%, 33%{
-        content: "Civil Engineeer";
+        content: "Civil Engineer";
     }
     34%, 66%{
         content: "Designer";
