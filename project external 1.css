@@ -6,8 +6,8 @@
 }
 
 body {
-    color: #ededed;
-    background-image: url(portfolio\ bg\ 3.jpg);
+    /* color: #ededed;
+    background-image: url(portfolio\ bg\ 3.jpg); */
 }
 .profile-pic img{
     position: relative;
@@ -25,7 +25,7 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: #051129;
+    background: tra;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +43,26 @@ body {
     opacity: 0;
     animation: slideRight 1s ease forwards;
 }
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
 
+nav ul li {
+  margin: 0 1rem;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
 .navbar a {
     display: inline-block;
     font-size: 25px;
@@ -62,7 +81,7 @@ body {
 }
 
 .home {
-   position: relative;
+   /* position: relative;
    width: 100%;
    justify-content: space-between;
    height: 100vh;
@@ -70,11 +89,39 @@ body {
    background-position: center;
    display: flex;
    align-items: center;
-   padding: 70px 10% 0;
+   padding: 70px 10% 0; */
    
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    padding: 40px 20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.home-img {
+  flex: 1;
+  /* max-width: 300px;
+  margin: 1rem; */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
 
+.home-img img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #00eeff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.home-img img:hover{
+    transition: 0 0 10px ;
 }
 .home-content {
+    flex: 2;
+    padding: 20px;
     max-width: 600px;
     color: aliceblue
 }
@@ -147,6 +194,7 @@ body {
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
+    margin-bottom: 10px;
 }
 
 .home-sci a {
@@ -177,9 +225,10 @@ body {
 
 .resume-view-btn {
     display: inline;
-    padding: 12px 28px;
+    padding: 10px 20px;
     background: #0ef;
-    border-radius: 40px;
+    border-radius: 20px;
+    margin-top: 15px;
     font-size: 16px;
     color: #081b29;
     letter-spacing: 1px;
@@ -192,35 +241,78 @@ body {
     0 0 25px #0ef
 }
 
+/* responsive layout */
+@media(max-width: 768px){
+    .home{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-img,
+    .home-content{
+        width: 100%;
+    }
+
+    .home-img img{
+        width: 200px;
+        height: 200px;
+    }
+}
 .resume-view-btn:hover {
     box-shadow: 0 0 5px cyan,
         0 0 25px cyan, 0 0 50px cyan,
         0 0 100px cyan, 0 0 200px cyan
 }
 .about{
-    display: grid;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding: 40px 20px;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 1.5rem;
     
 }
-.about-img img{
+.about-img {
     /* width: 70%;
     border-radius: 50%;
     background-position: center;
     box-shadow: 0 0 50px #0ef;
     margin-left: 50px;
     align-items: center; */
-    padding-bottom: 8px;
+    /* padding-bottom: 8px;
     width: 80%;
-    height: auto;
-    max-width: 630px;
+    height: auto; */
+    /* max-width: 100%; */
+    padding: 20px;
+    flex: 1 1 300px;
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+    
+}
+.abot-img img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #00eeff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
+    /* align-items: center; */
 }
 .about-img .img:hover{
     transform: 0.2s linear;
     
 }
+.about-text{
+    flex: 2;
+    max-width: 700px;
+    padding: 20px;
+    /* text-align: left;
+    margin: 1rem; */
+}
+
 .about-text h2{
     font-size: 60px;
      color: aliceblue;
@@ -234,7 +326,7 @@ body {
     font-weight: 600;
     color: #fff;
     line-height: 1.7;
-    margin: 15px 0 30px;
+    margin-bottom: 15px;
 }
 .about-text p{
     color: aliceblue;
@@ -244,6 +336,7 @@ body {
 }
 .btn-box{
     display: inline;
+    margin-top: 20px;
     padding: 12px 28px;
     background: #0ef;
     border-radius: 40px;
@@ -263,44 +356,73 @@ body {
         0 0 25px cyan, 0 0 50px cyan,
         0 0 100px cyan, 0 0 200px cyan
 }
+
+/* responsive layout */
+@media(max-width:768px){
+    .about{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img img{
+        width: 200px;
+        height: 200px;
+    }
+    .about-text{
+        padding: 10px;
+        text-align: center;
+    }
+}
 #certificates{
     color: aliceblue;
     font-size: 20px;
     line-height: 1.4;
     margin-bottom: 4rem;
+    padding: 40px 20px;
+
 }
 .sub-title{
     text-align: center;
-    font-size: 60px;
-    padding-bottom: 70px;
+    font-size: 32px;
+    /* padding-bottom: 30px; */
      color: aliceblue;
+    margin-bottom: 30px;
 }
 .sub-title span{
     color: #0ef;
 }
 .row-container{
-    padding: 10px;
+    /* padding: 10px; */
+    max-width: 1200px;
+    margin: auto;
 }
 .card-list{
-    display: grid;
-    grid-template-rows: repeat(auto-fit,minmax(259px,1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* grid-template-rows: repeat(auto-fit,minmax(259px,1fr));
     grid-gap: 40px;
-    margin-top: 50px;
+    margin-top: 50px; */
 }
 .card-list div{
     background-color: transparent;
-    padding: 10px;
+    padding: 20px;
     font-size: 13px;
     font-weight: 13px;
-    border-radius: 20px;
-    border-right: 10px;
+    border-radius: 12px;
+    width: 300px;
+    /* border-right: 10px; */
     transition: background 0.5s, transform 0.5s;
     box-shadow: 1px 1px 20px #012290f7,
                 1px 1px 40px #0053b8f7
 }
-.card-list div i{
-    font-size: 50px;
-    margin-bottom: 30px;
+.card-list > div:hover {
+    transform: translateY(-5px);
+  }
+.card-list i{
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 .card-list div h2{
 font-size: 30px;
@@ -317,7 +439,7 @@ margin-bottom: 15px;
 }
 .read{
     display: inline-block;
-    padding: 12px 28px;
+    padding: 8px 16px;
     background: #0ef;
     border-radius: 40px;
     font-size: 16px;
